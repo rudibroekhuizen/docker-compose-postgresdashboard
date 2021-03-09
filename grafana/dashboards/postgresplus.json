@@ -15,8 +15,7 @@
   "editable": true,
   "gnetId": null,
   "graphTooltip": 0,
-  "id": 1,
-  "iteration": 1613076855109,
+  "iteration": 1615306531329,
   "links": [],
   "panels": [
     {
@@ -197,7 +196,7 @@
           "group": [],
           "metricColumn": "none",
           "rawQuery": true,
-          "rawSql": "SELECT \n  (total_time / 1000) AS total_time, \n  (mean_time / 1000) AS mean_time,\n  calls,\n  query \nFROM pg_stat_statements \nORDER BY 1 DESC \nLIMIT 100;",
+          "rawSql": "SELECT \n  (total_exec_time / 1000) AS total_exec_time, \n  (mean_exec_time / 1000) AS mean_exec_time,\n  calls,\n  query \nFROM pg_stat_statements \nORDER BY 1 DESC \nLIMIT 100;",
           "refId": "A",
           "select": [
             [
@@ -273,7 +272,7 @@
         "showHeader": true,
         "sortBy": [
           {
-            "desc": false,
+            "desc": true,
             "displayName": "log_time"
           }
         ]
@@ -378,10 +377,10 @@
           "selected": true,
           "tags": [],
           "text": [
-            "SELECT"
+            "All"
           ],
           "value": [
-            "SELECT"
+            "$__all"
           ]
         },
         "datasource": "PostgreSQL",
@@ -443,12 +442,12 @@
     ]
   },
   "time": {
-    "from": "now-6h",
+    "from": "now-1h",
     "to": "now"
   },
   "timepicker": {},
   "timezone": "",
   "title": "Postgresplus",
   "uid": "88VdpDPGk",
-  "version": 5
+  "version": 1
 }
