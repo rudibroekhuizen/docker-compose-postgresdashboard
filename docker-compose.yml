@@ -124,7 +124,6 @@ networks:
     internal: false
 
 volumes:
-  elasticsearch_data:
   grafana_data:
   pgadmin_data:
   schemaspy_data:
