@@ -103,18 +103,6 @@ services:
       - backend
     command: "-t pgsql -host ${POSTGRES_HOST} -port ${POSTGRES_PORT} -db ${POSTGRES_DB} -s ${POSTGRES_SCHEMA} -u ${POSTGRES_USER} -p ${POSTGRES_PASSWORD}"
 
-  sqlpad:
-    image: 'sqlpad/sqlpad:latest'
-    hostname: 'sqlpad'
-    ports:
-      - '3030:3000'
-    networks:
-      - backend
-    environment:
-      - SQLPAD_DEBUG=TRUE
-    volumes:
-      - sqlpad:/var/lib/sqlpad
-
 networks:
   web:
     internal: false
@@ -128,4 +116,4 @@ volumes:
   pglog:
   pgdata:
   pgadmin:
-  sqlpad:
+
