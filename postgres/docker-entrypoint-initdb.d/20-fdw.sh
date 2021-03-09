@@ -30,7 +30,8 @@ psql -v ON_ERROR_STOP=1 --username "$POSTGRES_USER" <<-EOSQL
     query text,
     query_pos integer,
     location text,
-    application_name text
+    application_name text,
+    backend_type text
     ) SERVER pglog
     OPTIONS ( filename '/tmp/pglog.csv', format 'csv' );
 EOSQL
