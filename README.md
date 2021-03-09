@@ -21,7 +21,7 @@ $ docker-compose up
 
 ### Connect to Postgres container
 ```sh
-$ docker-compose exec postgres sh
+$ docker-compose exec postgres bash
 ```
 Additional commands to start psql:
 ```sh
