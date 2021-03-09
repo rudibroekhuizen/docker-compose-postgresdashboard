@@ -26,7 +26,7 @@ $ docker-compose exec postgres sh
 Additional commands to start psql:
 ```sh
 $ su postgres
-psql
+$ psql
 ```
 Start psql directly:
 ```sh
