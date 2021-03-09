@@ -62,7 +62,6 @@ $ docker stats $(docker inspect -f "{{ .Name }}" $(docker ps -q))
 # Remove containers plus volumes
 $ docker-compose down -v --remove-orphans --rmi all
 ```
-
 ```mermaid
 graph TD
    a[PostgreSQL]
@@ -75,4 +74,3 @@ graph TD
    a --- d
    a --- e
 ```
-
