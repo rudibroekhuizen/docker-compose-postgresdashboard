@@ -8,7 +8,7 @@ PostgreSQL playground running on Docker with info, stats and logs displayed in a
 Install docker and docker-compose. Clone this repo to your local machine. Start containers:
 
 ```sh
-docker-compose up
+# docker-compose up
 ```
 
 ### Open pgAdmin webinterface
@@ -21,16 +21,16 @@ docker-compose up
 
 ### Connect to Postgres container
 ```sh
-docker-compose exec postgres sh
+# docker-compose exec postgres sh
 ```
 Additional commands to start psql:
 ```sh
-su postgres
+# su postgres
 psql
 ```
 Start psql directly:
 ```sh
-docker-compose exec postgres psql -U postgres
+# docker-compose exec postgres psql -U postgres
 ```
 
 ### Download and unzip test database (in the container)
@@ -40,14 +40,12 @@ wget https://s3.amazonaws.com/assets.datacamp.com/course/sql/dvdrental.zip; unzi
 
 ### Create database (psql)
 ```sh
-docker-compose exec postgres psql -U postgres
-CREATE DATABASE sakila;
-exit
+psql> CREATE DATABASE sakila;
 ```
 
 ### Load database using pg_restore
 ```sh
-pg_restore -U postgres -d sakila dvdrental.tar
+# pg_restore -U postgres -d sakila dvdrental.tar
 ```
 
 ### Collect logs
@@ -57,7 +55,7 @@ docker-compose exec postgres bash /scripts/pglog.sh
 
 ### Run 1000 queries
 ```sh
-yes "select * from public.film_actor;" | head -n 1000 | parallel "psql -U postgres -d sakila -c {1}"
+# yes "select * from public.film_actor;" | head -n 1000 | parallel "psql -U postgres -d sakila -c {1}"
 ```
 
 ## Pgbench
