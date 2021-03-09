@@ -15,9 +15,9 @@ docker-compose up
 
 [pgAdmin webinterface](http://pgadmin.docker.localhost)
 
-Username: dba@naturalis.nl
-Password: postgres
-Database password: postgres
+- Username: dba@naturalis.nl
+- Password: postgres
+- Database password: postgres
 
 ### Connect to Postgres container
 ```sh
