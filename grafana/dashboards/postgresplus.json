@@ -15,7 +15,7 @@
   "editable": true,
   "gnetId": null,
   "graphTooltip": 0,
-  "iteration": 1615306531329,
+  "iteration": 1615307911622,
   "links": [],
   "panels": [
     {
@@ -70,7 +70,7 @@
           "group": [],
           "metricColumn": "application_name",
           "rawQuery": true,
-          "rawSql": "SELECT\n  log_time AS time, count(*) AS metric\nFROM pglog\nWHERE\n  $__timeFilter(log_time) \nAND (error_severity IN ($error_severity) OR NULLIF(TRIM(CONCAT($error_severity)), '') IS null)\nAND (command_tag IN ($command_tag) OR NULLIF(TRIM(CONCAT($command_tag)), '') IS null)\n\nGROUP BY 1",
+          "rawSql": "SELECT\n  log_time AS time, count(*) AS metric\nFROM pglog\nWHERE\n  $__timeFilter(log_time) \nAND (error_severity IN ($error_severity) OR NULLIF(TRIM(CONCAT($error_severity)), '') IS null)\nAND (command_tag IN ($command_tag) OR NULLIF(TRIM(CONCAT($command_tag)), '') IS null)\nGROUP BY 1",
           "refId": "A",
           "select": [
             [
@@ -170,6 +170,18 @@
                 "value": 507
               }
             ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "query"
+            },
+            "properties": [
+              {
+                "id": "custom.width",
+                "value": 427
+              }
+            ]
           }
         ]
       },
@@ -182,12 +194,7 @@
       "id": 5,
       "options": {
         "showHeader": true,
-        "sortBy": [
-          {
-            "desc": true,
-            "displayName": "total_time"
-          }
-        ]
+        "sortBy": []
       },
       "pluginVersion": "7.3.2",
       "targets": [
@@ -196,7 +203,7 @@
           "group": [],
           "metricColumn": "none",
           "rawQuery": true,
-          "rawSql": "SELECT \n  (total_exec_time / 1000) AS total_exec_time, \n  (mean_exec_time / 1000) AS mean_exec_time,\n  calls,\n  query \nFROM pg_stat_statements \nORDER BY 1 DESC \nLIMIT 100;",
+          "rawSql": "SELECT \n  query,\n  (mean_exec_time / 1000) AS mean_exec_time,\n  calls,\n  rows,\n  (total_exec_time / 1000) AS total_exec_time, \n  (max_exec_time / 1000) AS max_exec_time,\n  (min_exec_time / 1000) AS min_exec_time\nFROM pg_stat_statements \nORDER BY 2 DESC \nLIMIT 100;",
           "refId": "A",
           "select": [
             [
@@ -272,7 +279,7 @@
         "showHeader": true,
         "sortBy": [
           {
-            "desc": true,
+            "desc": false,
             "displayName": "log_time"
           }
         ]
@@ -312,7 +319,7 @@
       "type": "table"
     }
   ],
-  "refresh": "5s",
+  "refresh": "",
   "schemaVersion": 26,
   "style": "dark",
   "tags": [],
@@ -447,7 +454,7 @@
   },
   "timepicker": {},
   "timezone": "",
-  "title": "Postgresplus",
+  "title": "PostgreSQL dashboard",
   "uid": "88VdpDPGk",
   "version": 1
 }
