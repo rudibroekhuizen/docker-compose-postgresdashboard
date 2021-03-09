@@ -32,22 +32,6 @@ Start psql directly:
 ```sh
 $ docker-compose exec postgres psql -U postgres
 ```
-
-### Download and unzip test database (in the container)
-```sh
-$ wget https://s3.amazonaws.com/assets.datacamp.com/course/sql/dvdrental.zip; unzip dvdrental.zip
-```
-
-### Create database (psql)
-```sh
-psql> CREATE DATABASE sakila;
-```
-
-### Load database using pg_restore
-```sh
-$ pg_restore -U postgres -d sakila dvdrental.tar
-```
-
 ### Collect logs
 ```sh
 $ docker-compose exec postgres bash /scripts/pglog.sh
