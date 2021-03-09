@@ -1,4 +1,4 @@
-# docker-postgresplus
+# docker-compose-postgredashboard
 
 
 ## Overview
