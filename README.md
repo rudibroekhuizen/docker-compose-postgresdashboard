@@ -11,13 +11,18 @@ Install docker and docker-compose. Clone this repo to your local machine. Start 
 $ docker-compose up
 ```
 
-### Open pgAdmin webinterface
+### pgAdmin
 
-[pgAdmin webinterface](http://pgadmin.docker.localhost)
+[pgAdmin](http://pgadmin.docker.localhost)
 
 - Username: dba@naturalis.nl
 - Password: postgres
 - Database password: postgres
+
+
+### Grafana
+
+[Grafana](http://grafana.docker.localhost)
 
 ### Connect to Postgres container
 ```sh
