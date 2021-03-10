@@ -2,7 +2,7 @@
 
 
 ## Overview
-PostgreSQL playground running on Docker with info, stats and logs displayed in a Grafana dashboard. Additional services running are pgAdmin, Schemaspy and Sqlpad.
+PostgreSQL playground running on Docker with info, stats and logs displayed in a Grafana dashboard. Additional services running are pgAdmin and Schemaspy.
 
 ## Usage
 Install docker and docker-compose. Clone this repo to your local machine. Start containers:
